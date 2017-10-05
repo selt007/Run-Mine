@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Drawing;
+using System.Linq;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace Run_Mining
@@ -8,27 +10,30 @@ namespace Run_Mining
     public partial class Form1 : Form
     {
         public static bool action = false;
+        public static string target_name = "miner";
 
         public Form1()
         {
             TopMost = true;
             InitializeComponent();
+            timer.Interval = 2000;
         }
 
         private void power_Click(object sender, EventArgs e)
         {
-            action = !action;
-            
+            action = !action;            
             if (action)
             {
-                Running.runBat();
                 power.Text = "Stop!";
                 power.ForeColor = Color.Red;
+                timer.Start();
             }
-            else {
+            else
+            {
                 Running.killBat();
                 power.Text = "Start!";
                 power.ForeColor = Color.Green;
+                timer.Stop();
             }
         }
 
@@ -36,6 +41,15 @@ namespace Run_Mining
         {
             Running.killBat();
             Application.Exit();
+        }
+
+        private void timer_Tick(object sender, EventArgs e)
+        {
+            var runningProcs = from proc in Process.GetProcesses(".") orderby proc.Id select proc;
+            if (runningProcs.Count(p => p.ProcessName.Contains(target_name)) > 0)
+            { }
+            else
+            { Running.runBat(); }
         }
     }
 }

@@ -12,7 +12,7 @@ namespace Run_Mining
         {
             try
             {
-                ProcessStartInfo startInfo = new ProcessStartInfo("fypool.bat");
+                ProcessStartInfo startInfo = new ProcessStartInfo("D:/Майнинг/Zec Miner 0.3.4b/0.3.4b/fypool.bat");
                 startInfo.WorkingDirectory = Path.GetDirectoryName(startInfo.FileName);
                 Process.Start(startInfo);
             }
@@ -21,18 +21,18 @@ namespace Run_Mining
                 "The application must be in the same folder as the files!");
             }
         }
+
         public static void killBat()
         {
-            string target_name = "miner";
             Process[] local_procs = Process.GetProcesses();
             try
             {
-                Process target_proc = local_procs.First(p => p.ProcessName == target_name);
+                Process target_proc = local_procs.First(p => p.ProcessName == Form1.target_name);
                 target_proc.Kill();
 
                 try
                 {
-                    ProcessStartInfo powercfg = new ProcessStartInfo("mineoff.bat");
+                    ProcessStartInfo powercfg = new ProcessStartInfo("D:/Майнинг/Zec Miner 0.3.4b/0.3.4b/mineoff.bat");
                     powercfg.WorkingDirectory = Path.GetDirectoryName(powercfg.FileName);
                     powercfg.WindowStyle = ProcessWindowStyle.Hidden;
                     Process.Start(powercfg);
@@ -44,7 +44,6 @@ namespace Run_Mining
             }
             catch (InvalidOperationException)
             {
-                //MessageBox.Show("Process " + target_name + " not found!");
                 Console.Beep(500,500);
             }
         }
