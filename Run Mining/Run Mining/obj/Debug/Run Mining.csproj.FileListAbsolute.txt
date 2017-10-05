@@ -1,0 +1,10 @@
+D:\Alexandr Olegovich\Projects\Run Mining\Run Mining\bin\Debug\Run Mining.exe.config
+D:\Alexandr Olegovich\Projects\Run Mining\Run Mining\bin\Debug\Run Mining.exe
+D:\Alexandr Olegovich\Projects\Run Mining\Run Mining\bin\Debug\Run Mining.pdb
+D:\Alexandr Olegovich\Projects\Run Mining\Run Mining\obj\Debug\Run Mining.csprojResolveAssemblyReference.cache
+D:\Alexandr Olegovich\Projects\Run Mining\Run Mining\obj\Debug\Run_Mining.Form1.resources
+D:\Alexandr Olegovich\Projects\Run Mining\Run Mining\obj\Debug\Run_Mining.Properties.Resources.resources
+D:\Alexandr Olegovich\Projects\Run Mining\Run Mining\obj\Debug\Run Mining.csproj.GenerateResource.Cache
+D:\Alexandr Olegovich\Projects\Run Mining\Run Mining\obj\Debug\Run Mining.csproj.CoreCompileInputs.cache
+D:\Alexandr Olegovich\Projects\Run Mining\Run Mining\obj\Debug\Run Mining.exe
+D:\Alexandr Olegovich\Projects\Run Mining\Run Mining\obj\Debug\Run Mining.pdb
