@@ -33,6 +33,7 @@
             this.power = new System.Windows.Forms.Button();
             this.exit = new System.Windows.Forms.Button();
             this.timer = new System.Windows.Forms.Timer(this.components);
+            this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.SuspendLayout();
             // 
             // power
@@ -63,6 +64,13 @@
             // 
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
+            // notifyIcon
+            // 
+            this.notifyIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon.Icon")));
+            this.notifyIcon.Text = "Run Mine";
+            this.notifyIcon.Visible = true;
+            this.notifyIcon.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon_MouseDoubleClick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -73,7 +81,8 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Run Miner";
+            this.Text = "Run Mine";
+            this.Resize += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
 
         }
@@ -83,6 +92,7 @@
         public System.Windows.Forms.Button power;
         private System.Windows.Forms.Button exit;
         private System.Windows.Forms.Timer timer;
+        public System.Windows.Forms.NotifyIcon notifyIcon;
     }
 }
 

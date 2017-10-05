@@ -51,5 +51,22 @@ namespace Run_Mining
             else
             { Running.runBat(); }
         }
+
+        private void notifyIcon_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            Show();
+            WindowState = FormWindowState.Normal;
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            if (WindowState == FormWindowState.Minimized)
+            {
+                Hide();
+                notifyIcon.BalloonTipTitle = "Программа была спрятана!";
+                notifyIcon.BalloonTipText = "Обратите внимание что программа была спрятана в трей и продолжит свою работу.";
+                notifyIcon.ShowBalloonTip(3000);
+            }
+        }
     }
 }
