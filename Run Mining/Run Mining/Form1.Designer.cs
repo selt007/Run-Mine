@@ -34,6 +34,7 @@
             this.exit = new System.Windows.Forms.Button();
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // power
@@ -71,6 +72,10 @@
             this.notifyIcon.Visible = true;
             this.notifyIcon.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon_MouseDoubleClick);
             // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -93,6 +98,7 @@
         private System.Windows.Forms.Button exit;
         private System.Windows.Forms.Timer timer;
         public System.Windows.Forms.NotifyIcon notifyIcon;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 

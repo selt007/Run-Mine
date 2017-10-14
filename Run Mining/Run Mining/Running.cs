@@ -2,17 +2,23 @@
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Run_Mining
 {
     class Running
     {
+        public static ProcessStartInfo startInfo;
+        public static string result,command,json;
+        public static double rate;
+
         public static void runBat()
         {
             try
             {
-                ProcessStartInfo startInfo = new ProcessStartInfo("fypool.bat");
+                startInfo = new ProcessStartInfo("D:/Майнинг/Zec Miner 0.3.4b/0.3.4b/fypool.bat");
                 startInfo.WorkingDirectory = Path.GetDirectoryName(startInfo.FileName);
                 Process.Start(startInfo);
             }
@@ -21,7 +27,7 @@ namespace Run_Mining
                 "The application must be in the same folder as the files!");
             }
         }
-
+        
         public static void killBat()
         {
             Process[] local_procs = Process.GetProcesses();
@@ -32,7 +38,7 @@ namespace Run_Mining
 
                 try
                 {
-                    ProcessStartInfo powercfg = new ProcessStartInfo("mineoff.bat");
+                    ProcessStartInfo powercfg = new ProcessStartInfo("D:/Майнинг/Zec Miner 0.3.4b/0.3.4b/mineoff.bat");
                     powercfg.WorkingDirectory = Path.GetDirectoryName(powercfg.FileName);
                     powercfg.WindowStyle = ProcessWindowStyle.Hidden;
                     Process.Start(powercfg);
@@ -46,6 +52,7 @@ namespace Run_Mining
             {
                 Console.Beep(500,500);
             }
+            Task.WaitAll();
         }
     }
 }
