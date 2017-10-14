@@ -18,7 +18,7 @@ namespace Run_Mining
         {
             try
             {
-                startInfo = new ProcessStartInfo("D:/Майнинг/Zec Miner 0.3.4b/0.3.4b/fypool.bat");
+                startInfo = new ProcessStartInfo("fypool.bat");
                 startInfo.WorkingDirectory = Path.GetDirectoryName(startInfo.FileName);
                 Process.Start(startInfo);
             }
@@ -38,7 +38,7 @@ namespace Run_Mining
 
                 try
                 {
-                    ProcessStartInfo powercfg = new ProcessStartInfo("D:/Майнинг/Zec Miner 0.3.4b/0.3.4b/mineoff.bat");
+                    ProcessStartInfo powercfg = new ProcessStartInfo("mineoff.bat");
                     powercfg.WorkingDirectory = Path.GetDirectoryName(powercfg.FileName);
                     powercfg.WindowStyle = ProcessWindowStyle.Hidden;
                     Process.Start(powercfg);
